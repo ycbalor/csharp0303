@@ -13,6 +13,7 @@ namespace ConsoleApplication2
 		{
 			Console.WriteLine(name + "가 짖다.");
 		}
+		// public void Work() { Console.WriteLine(name + "가 일한다."); }
 
 	}
 
@@ -30,15 +31,17 @@ namespace ConsoleApplication2
 	{
 		static void Main(string[] args)
 		{
-			Pudle pudle = new Pudle();
-			pudle.name = "곰둥이";
-			pudle.Jitda();
-			pudle.Work();
+			// 업캐스팅
+			Dog pudle = new Pudle();
+			// Pudle pudle = new Pudle();
+			((Pudle)pudle).name = "곰둥이";
+			((Pudle)pudle).Jitda();
+			((Pudle)pudle).Work();
 
-			Jindo jindo = new Jindo();
-			jindo.name = "김용찬";
-			jindo.Jitda();
-			jindo.Work();
+			Dog jindo = new Jindo();
+			((Pudle)jindo).name = "김용찬";
+			((Pudle)jindo).Jitda();
+			((Pudle)jindo).Work();
 		}
 	}
 }
